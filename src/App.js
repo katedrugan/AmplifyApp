@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import ReactDOM from 'react-dom';
 import './App.css';
 
 function App() {
@@ -25,3 +26,17 @@ function App() {
 }
 
 export default App;
+
+
+class HelloMessage extends React.Component {
+    render() {
+        return React.createElement(
+            "div",
+            null,
+            "Hello ",
+            this.props.name
+        );
+    }
+}
+
+ReactDOM.render(React.createElement(HelloMessage, { name: "Kate" }), document.getElementById('hello-example'));
